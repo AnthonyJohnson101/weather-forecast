@@ -26,6 +26,7 @@ body {
     padding-bottom: 10%;
     padding-top: 20px;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .search h1 {
@@ -38,7 +39,7 @@ body {
 }
 
 .search button { 
-    width: 308px;
+    width: 300px;
     height: 35px;
 }
 
@@ -73,3 +74,9 @@ body {
     background-color: lightskyblue;
     border-radius: 10px;
 }
+
+.forecast-cards {
+  margin-left: 30px;
+   
+}
+

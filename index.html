@@ -4,9 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/style.css">
     <title>Weather Forecast</title>
 </head>
 <body>
     
+        <header class="header">
+            <h1>Weather Dashboard</h1>
+        </header>
+
+    <section class="column left">
+
+        <aside class="search">
+                <h1>Search for a City:</h1>
+                <input type="text" placeholder="City Name">
+                <button>Search</button>
+        </aside>
+
+        <aside class="list-box">
+            <ul class="ul-list">
+                <!-- delete these-->
+                <li>Detroit</li>
+                <li>Las Vegas</li>
+                <li>Columbus</li> 
+            </ul>
+        </aside>
+
+    </section>
+
+    <section class="column right">
+
+        <section class="current-weather">
+            <h1>current weather</h1>
+            <p id="city-name">Location:</p>
+            <p id="date">Date:</p>
+            <p id="temp">Temperature:</p>
+            <p id="wind">Wind Speed:</p>
+            <p id="humidity">Humidity:</p>
+        </section>
+
+
+    </section>
+
+    <!--- 92fc842082975cda7c600e6974674317
+   https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+   api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key} --->
 </body>
 </html>

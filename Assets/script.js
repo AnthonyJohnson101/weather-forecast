@@ -108,14 +108,27 @@ function performSearch (event) {
         //creates a new button with the value of the searched content
         function createButton() {
           cityList.innerHTML = ""
-          for (var i = 0; i < previousSearch.length; i++) {
-            var newBtn = document.createElement('button')
+          for (let i = 0; i < previousSearch.length; i++) {
+            let newButton = document.createElement("button")
         
-            newBtn.setAttribute('class', 'btn-info btn m-2')
-            newBtn.setAttribute('value', previousSearch[i])
-            newBtn.textContent = previousSearch[i]
-            newBtn.addEventListener('click', performSearch)
-            cityList.appendChild(newBtn)
+            newButton.setAttribute("class", "btn-info btn m-2")
+            newButton.setAttribute("value", previousSearch[i])
+            newButton.textContent = previousSearch[i]
+            newButton.addEventListener("click", performSearch)
+            cityList.appendChild(newButton)
           };
         };
         
+        //loads local storage and creates a button for past searches
+        function loadButton() {
+          let history = localStorage.getItem("previousCities")
+        
+          if (history) {
+            previousSearch = JSON.parse(history)
+          };
+        
+          createButton();
+        };
+
+        loadButton();
+        //http://openweathermap.org/img/wn/${imgid}@2x.png

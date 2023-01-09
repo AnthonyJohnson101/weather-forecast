@@ -34,13 +34,19 @@ let date5 = document.querySelector("#date5")
 let temp5 = document.querySelector("#temp5")
 let windSpeed5 = document.querySelector("#wind5")
 let humidity5 = document.querySelector("#humidity5")
+//array to push saved city names to
+previousSearch = []
 //set global variable for the unordered list
-let cityList = document.querySelector("#ul-list")
+let cityList = document.querySelector(".ul-list")
 
-//performs search on clickand populates the information to the screen.
-searchButton.addEventListener("click", function (request) {
-
-    let citySearch = searchInput.value
+//performs search on click
+searchButton.addEventListener("click", performSearch);
+//performs search and sets the city search = to whats in the input or the created button's value is
+function performSearch (event) {
+  let citySearch = ""
+  if (event.target.innerText !== "Search") {
+    citySearch = event.target.value
+  } else citySearch = searchInput.value
 
     console.log(citySearch)
     let url = `https://api.openweathermap.org/data/2.5/forecast?q=${citySearch}&appid=${apiKey}&units=imperial`
@@ -53,7 +59,7 @@ searchButton.addEventListener("click", function (request) {
 
           .then(function (data) {
             console.log(data);
-            
+            //puts the information from the api in their respective places
             cityName.textContent = "Location: " + data.city.name
             date.textContent = "Date & Time: " + data.list[0].dt_txt
             temp.textContent = "Temperature: " + data.list[0].main.temp + " °F"
@@ -85,7 +91,31 @@ searchButton.addEventListener("click", function (request) {
             windSpeed5.textContent = "Wind Speed: " + data.list[39].wind.speed + " MPH"
             humidity5.textContent = "Humidity: " + data.list[39].main.humidity + " %"      
           });
+          saveHistory();
+        };
 
+        //saves previous searches to local storage
+        function saveHistory() {
 
-          //function spot for create li
-        });
+          if (previousSearch.includes(searchInput.value) === false) {
+            previousSearch.push(searchInput.value)
+        
+            localStorage.setItem('previousCities', JSON.stringify(previousSearch))
+            createButton();
+          };
+        };
+        
+        //creates a new button with the value of the searched content
+        function createButton() {
+          
+          for (var i = 0; i < previousSearch.length; i++) {
+            var newBtn = document.createElement('button')
+        
+            newBtn.setAttribute('class', 'btn-info btn m-2')
+            newBtn.setAttribute('value', previousSearch[i])
+            newBtn.textContent = previousSearch[i]
+            newBtn.addEventListener('click', performSearch)
+            cityList.appendChild(newBtn)
+          };
+        };
+        

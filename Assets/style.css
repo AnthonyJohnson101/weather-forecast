@@ -57,9 +57,10 @@ body {
     list-style: none;
 }
 
-.ul-list li {
+.ul-list button {
     padding-top: 5px;
     padding-bottom: 5px;
+    width: 90%;
 }
 
 /* column layout */

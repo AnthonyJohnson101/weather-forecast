@@ -77,6 +77,7 @@ body {
 
 .forecast-cards {
   margin-left: 30px;
-   
+  display: flex;
+  justify-content: space-between; 
 }
 

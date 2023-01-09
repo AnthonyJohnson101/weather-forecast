@@ -18,8 +18,8 @@
 
         <aside class="search">
                 <h1>Search for a City:</h1>
-                <input type="text" placeholder="City Name">
-                <button>Search</button>
+                <input type="text" id="search-input" placeholder="City Name">
+                <button id="search-button">Search</button>
         </aside>
 
         <aside class="list-box">
@@ -36,9 +36,9 @@
     <section class="column right">
 
         <section class="current-weather">
-            <h3>Current Weather</h3>
+            <h3>Upcoming Weather</h3>
             <p id="city-name">Location:</p>
-            <p id="date">Date:</p>
+            <p id="date">Date & Time:</p>
             <p id="temp">Temperature:</p>
             <p id="wind">Wind Speed:</p>
             <p id="humidity">Humidity:</p>
@@ -47,68 +47,68 @@
     <section class="forecast-cards">
 
         <div class="row">
-            <div class="card 1" style="width: 12rem;">
-                <img src="..." class="card-img-top" alt="...">
+            <div class="card" style="width: 12rem;">
+                <img id="img1" src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h5 class="card-title" id="date1"></h5>
+                  
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Temp: </li>
-                  <li class="list-group-item">Wind:</li>
-                  <li class="list-group-item">Humidity:</li>
+                  <li class="list-group-item" id="temp1">Temp:</li>
+                  <li class="list-group-item" id="wind1">Wind:</li>
+                  <li class="list-group-item" id="humidity1">Humidity:</li>
                 </ul>
             </div>
 
-            <div class="card 2" style="width: 12rem;">
+            <div class="card" style="width: 12rem;">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h5 class="card-title" id="date2"></h5>
+                  
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Temp: </li>
-                  <li class="list-group-item">Wind:</li>
-                  <li class="list-group-item">Humidity:</li>
+                  <li class="list-group-item" id="temp2">Temp:</li>
+                  <li class="list-group-item" id="wind2">Wind:</li>
+                  <li class="list-group-item" id="humidity2">Humidity:</li>
                 </ul>
             </div>
 
-            <div class="card 3" style="width: 12rem;">
+            <div class="card" style="width: 12rem;">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h5 class="card-title date3" id="date3"></h5>
+                  
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Temp: </li>
-                  <li class="list-group-item">Wind:</li>
-                  <li class="list-group-item">Humidity:</li>
+                  <li class="list-group-item" id="temp3">Temp:</li>
+                  <li class="list-group-item" id="wind3">Wind:</li>
+                  <li class="list-group-item" id="humidity3">Humidity:</li>
                 </ul>
             </div>
 
-            <div class="card 4" style="width: 12rem;">
+            <div class="card" style="width: 12rem;">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h5 class="card-title" id="date4"></h5>
+                  
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Temp: </li>
-                  <li class="list-group-item">Wind:</li>
-                  <li class="list-group-item">Humidity:</li>
+                  <li class="list-group-item" id="temp4">Temp:</li>
+                  <li class="list-group-item" id="wind4">Wind:</li>
+                  <li class="list-group-item" id="humidity4">Humidity:</li>
                 </ul>
             </div>
 
-            <div class="card 5" style="width: 12rem;">
+            <div class="card" style="width: 12rem;">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h5 class="card-title" id="date5"></h5>
+                  
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Temp: </li>
-                  <li class="list-group-item">Wind:</li>
-                  <li class="list-group-item">Humidity:</li>
+                  <li class="list-group-item" id="temp5">Temp:</li>
+                  <li class="list-group-item" id="wind5">Wind:</li>
+                  <li class="list-group-item" id="humidity5">Humidity:</li>
                 </ul>
             </div>
         </div>
@@ -119,5 +119,6 @@
     <!--- 92fc842082975cda7c600e6974674317
    https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
    api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key} --->
+   <script src="./Assets/script.js"></script>
 </body>
 </html>

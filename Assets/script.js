@@ -107,7 +107,7 @@ function performSearch (event) {
         
         //creates a new button with the value of the searched content
         function createButton() {
-          
+          cityList.innerHTML = ""
           for (var i = 0; i < previousSearch.length; i++) {
             var newBtn = document.createElement('button')
         

@@ -19,21 +19,25 @@ let date2 = document.querySelector("#date2")
 let temp2 = document.querySelector("#temp2")
 let windSpeed2 = document.querySelector("#wind2")
 let humidity2 = document.querySelector("#humidity2")
+let img2 = document.querySelector("#img2")
 //day 3
 let date3 = document.querySelector("#date3")
 let temp3 = document.querySelector("#temp3")
 let windSpeed3 = document.querySelector("#wind3")
 let humidity3 = document.querySelector("#humidity3")
+let img3 = document.querySelector("#img3")
 //day 4
 let date4 = document.querySelector("#date4")
 let temp4 = document.querySelector("#temp4")
 let windSpeed4 = document.querySelector("#wind4")
 let humidity4 = document.querySelector("#humidity4")
+let img4 = document.querySelector("#img4")
 //day 5 (Wont always be 24hrs from day 4, sometimes slightly less) 
 let date5 = document.querySelector("#date5")
 let temp5 = document.querySelector("#temp5")
 let windSpeed5 = document.querySelector("#wind5")
 let humidity5 = document.querySelector("#humidity5")
+let img5 = document.querySelector("#img5")
 //array to push saved city names to
 previousSearch = []
 //set global variable for the unordered list
@@ -70,26 +74,36 @@ function performSearch (event) {
             temp1.textContent = "Temperature: " + data.list[8].main.temp + " °F"
             windSpeed1.textContent = "Wind Speed: " + data.list[8].wind.speed + " MPH"
             humidity1.textContent = "Humidity: " + data.list[8].main.humidity + " %"
+            img1.src = "https://openweathermap.org/img/wn/" + data.list[8].weather[0].icon + ".png"
+            img1.alt = data.list[8].weather[0].description
 
             date2.textContent = "Date & Time: " + data.list[16].dt_txt
             temp2.textContent = "Temperature: " + data.list[16].main.temp + " °F"
             windSpeed2.textContent = "Wind Speed: " + data.list[16].wind.speed + " MPH"
             humidity2.textContent = "Humidity: " + data.list[16].main.humidity + " %"
+            img2.src = "https://openweathermap.org/img/wn/" + data.list[16].weather[0].icon + ".png"
+            img2.alt = data.list[16].weather[0].description
 
             date3.textContent = "Date & Time: " + data.list[24].dt_txt
             temp3.textContent = "Temperature: " + data.list[24].main.temp + " °F"
             windSpeed3.textContent = "Wind Speed: " + data.list[24].wind.speed + " MPH"
             humidity3.textContent = "Humidity: " + data.list[24].main.humidity + " %"
+            img3.src = "https://openweathermap.org/img/wn/" + data.list[24].weather[0].icon + ".png"
+            img3.alt = data.list[24].weather[0].description
 
             date4.textContent = "Date & Time: " + data.list[32].dt_txt
             temp4.textContent = "Temperature: " + data.list[32].main.temp + " °F"
             windSpeed4.textContent = "Wind Speed: " + data.list[32].wind.speed + " MPH"
             humidity4.textContent = "Humidity: " + data.list[32].main.humidity + " %"
+            img4.src = "https://openweathermap.org/img/wn/" + data.list[32].weather[0].icon + ".png"
+            img4.alt = data.list[32].weather[0].description
 
             date5.textContent = "Date & Time: " + data.list[39].dt_txt
             temp5.textContent = "Temperature: " + data.list[39].main.temp + " °F"
             windSpeed5.textContent = "Wind Speed: " + data.list[39].wind.speed + " MPH"
-            humidity5.textContent = "Humidity: " + data.list[39].main.humidity + " %"      
+            humidity5.textContent = "Humidity: " + data.list[39].main.humidity + " %"
+            img5.src = "https://openweathermap.org/img/wn/" + data.list[39].weather[0].icon + ".png"
+            img5.alt = data.list[39].weather[0].description
           });
           saveHistory();
         };
@@ -111,9 +125,9 @@ function performSearch (event) {
           for (let i = 0; i < previousSearch.length; i++) {
             let newButton = document.createElement("button")
         
-            newButton.setAttribute("class", "btn-info btn m-2")
             newButton.setAttribute("value", previousSearch[i])
             newButton.textContent = previousSearch[i]
+            newButton.setAttribute("class", "btn-info btn m-2")
             newButton.addEventListener("click", performSearch)
             cityList.appendChild(newButton)
           };
@@ -131,4 +145,4 @@ function performSearch (event) {
         };
 
         loadButton();
-        //http://openweathermap.org/img/wn/${imgid}@2x.png
+        
